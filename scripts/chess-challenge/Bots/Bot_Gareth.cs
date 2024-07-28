@@ -2,6 +2,7 @@ namespace auto_Bot_999;
 using ChessChallenge.API;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 /* < THE GARETH BOT >
  *
@@ -20,6 +21,21 @@ public class Bot_999 : IChessBot
 		Move[] legalMoves = board.GetLegalMoves(true);
 
 		if(legalMoves.Length > 0) {
+			var move = legalMoves[0];
+			var piece = board.GetPiece(move.TargetSquare);
+			
+			Array.Sort(legalMoves, (moveA, moveB) => {
+				var pieceA = board.GetPiece(moveA.TargetSquare);
+				var pieceB = board.GetPiece(moveB.TargetSquare);
+				if(pieceA.PieceType < pieceB.PieceType) {
+					return 1;
+				} else if (pieceA.PieceType > pieceB.PieceType) {
+					return -1;
+				} else {
+					return 0;
+				}
+			});
+			Debug.Print(piece.ToString());
 			return legalMoves[0];
 		}
 		
