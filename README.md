@@ -1,5 +1,7 @@
 This is Matt and Gareth's version of Tiny Chess bots.
 
+We're going to learn git and play with tiny chess bots.
+
 Source code for: https://sebastian.itch.io/tiny-chess-bots </br>
 Made with Godot 4.1 (mono)
 
