@@ -3,15 +3,10 @@ using ChessChallenge.API;
 using System;
 using System.Collections.Generic;
 
-/* < THE COPYCAT >
+/* < THE GARETH BOT >
  *
- * This bot always tries to replicate the opponent's move as closely as possible.
- * That's it really. It's admittedly not a very good bot as far as chess bots goes
- * but that wasn't my intention. I just find it fun to look at :)
- * 
- * Thanks for everything! <3
- * 
- * - castur_
+ * This is pretty simple for now but before long it will definitely
+ * be better at chess than Matt.
  */
 
 public class Bot_999 : IChessBot
