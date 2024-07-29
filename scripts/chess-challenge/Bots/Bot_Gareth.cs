@@ -15,9 +15,10 @@ public class Bot_999 : IChessBot
 	Random random = new Random();
 	ulong opponentBitboardOld = 0b0;
 	bool isWhite;
-
+	
 	public Move Think(Board board, Timer timer)
 	{
+		
 		Move[] legalMoves = board.GetLegalMoves(true);
 
 		if(legalMoves.Length > 0) {
@@ -42,5 +43,20 @@ public class Bot_999 : IChessBot
 		legalMoves = board.GetLegalMoves();
 		
 		return legalMoves[0];
+		
+		int Eval(Board board)
+		{
+			// Try to control more squares than the opponent
+			legalMoves = board.GetLegalMoves();
+			var myMoves = legalMoves.Length;
+			
+			var enemyMoves = 0;
+			for(var square = 1; square <= 64; square++)
+			{
+				if (board.SquareIsAttackedByOpponent(square)) {
+					enemyMoves ++;
+				}
+			}
+		}
 	}
 }
