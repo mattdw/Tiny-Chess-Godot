@@ -43,8 +43,9 @@ public class Bot_999 : IChessBot
 		legalMoves = board.GetLegalMoves();
 		
 		return legalMoves[0];
-		
-		int Eval(Board board)
+	}
+	
+	int Eval(Board board)
 		{
 			// Try to control more squares than the opponent
 			legalMoves = board.GetLegalMoves();
@@ -53,10 +54,9 @@ public class Bot_999 : IChessBot
 			var enemyMoves = 0;
 			for(var square = 1; square <= 64; square++)
 			{
-				if (board.SquareIsAttackedByOpponent(square)) {
+				if (board.SquareIsAttackedByOpponent(new Square(square))) {
 					enemyMoves ++;
 				}
 			}
 		}
-	}
 }
